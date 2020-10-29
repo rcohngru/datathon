@@ -60,8 +60,8 @@ class TwitterData():
                             'Cicero', 'Belfast', 'Russia', 'Uganda', 'Pakistan', 'Amsterdam', 'Lebanon', 'Bangladesh'
                             ]
         for loc in ignore_locations:
-        if s.lower() == loc.lower() or s.lower() in loc.lower() or loc.lower() in s.lower():
-            return False
+            if s.lower() == loc.lower() or s.lower() in loc.lower() or loc.lower() in s.lower():
+                return False
         return True
 
     def filter_country(self):
