@@ -46,14 +46,34 @@ class TwitterData():
         self.df = self.df[english_sources]
         return
 
+    def name_check(self, s):
+        ignore_locations = [
+                            'Canada', 'Australia', 'United Kingdom', 'London', 'London, England', 'England, United Kingdom', 'Ontario, Canada', 'UK', 'Toronto', 
+                            'Melbourne, Victoria', 'Lagos, Nigeria', 'Paris, France', 'South Africa' , 'Sydney, New South Wales', 'Germany', 'British Columbia, Canada'
+                            'Nigeria', 'India', 'France', 'Scotland, United Kingdom', 'Vancouver, British Columbia', 'Malaysia', 'Perth, Western Australia', 'Deutschland', 'Europe', 'Ottawa, Ontario',
+                            'Scotland', 'Worldwide', 'Hong Kong', 'London, UK', 'earth', '日本', 'Nairobi, Kenya', 'Nova Scotia, Canada', 'Cape Town, South Africa', 'World', 'Mumbai, India',
+                            'Melbourne, Australia', 'Montréal, Québec', 'Singapore', 'New Delhi, India', 'Venezuela', 'Sydney', 'Brisbane, Queensland', 'México', 'Glasgow, Scotland', 'Berlin, Germany',
+                            'Netherlands', 'Norway', 'Abuja, Nigeria', 'Dublin City, Ireland', 'Melbourne', 'Home', 'Sweden', 'Indonesia', 'Johannesburg, South Africa',
+                            'Lagos', 'Trinidad and Tobago', 'Mexico', 'Calgary', 'Ontario, CA', 'São Paulo, Brasil', 'Aukland, New Zealand', 'Toronto, Canada', 'Colombia', 'España', 'Québec, Canada',
+                            'Jamaica', 'Kenya', 'Hyderabad, India', 'Wales', 'Birmingham, England', 'Buenos Aires, Argentina', 'Winnipeg, Manitoba', 'Italy', 'Liverpool, England', 'Tokyo', 'Brasil',
+                            'Nederland', 'Bangkok', 'Bristol', 'Doha, Qatar', 'Lima, Peru', 'Copenhagen, Denmark', 'Montreal', 'Portugal', 'New Delhi', 'Spain', 'Rio de Janeiro, Brasil',
+                            'Cicero', 'Belfast', 'Russia', 'Uganda', 'Pakistan', 'Amsterdam', 'Lebanon', 'Bangladesh'
+                            ]
+        for loc in ignore_locations:
+        if s.lower() == loc.lower() or s.lower() in loc.lower() or loc.lower() in s.lower():
+            return False
+        return True
+
     def filter_country(self):
         print ('Filtering non-US tweets')
 
         tweet_source = self.df.place.apply(lambda d: d['country_code'] if type(d).__name__ != 'NoneType' else 'US')
         foreign_sources = (tweet_source != 'US').sum()
 
-        print (f'{foreign_sources} tweets have been removed \n')
-        self.df = self.df[tweet_source == 'US']
+        tweet_loc_mask = self.df['location'].apply(lambda s: self.name_check(s))
+
+        print (f'{foreign_sources + (self.df.shape[0] - tweet_loc_mask.sum())} tweets have been removed \n')
+        self.df = self.df[(tweet_source == 'US') & (tweet_loc_mask)]
         return
 
     def clean_data(self):
