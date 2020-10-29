@@ -1,6 +1,6 @@
 # Datathon: WEST COAST III
 ## Sentiment Analysis of Twitter Data
-Early this year, British and Brazilian presidents saw increases in approval ratings after being diagnosed with Covid-19. Source https://www.pri.org/stories/2020-10-02/trump-positive-what-catching-covid-19-meant-boris-johnson-jair-bolsonaro. There were rumbling on the left that, after Trump announced he had contracted the virus following the first presidential debate, the US President was strategically manipulating American sentiment to avoid criticism from his bad debate performance. We set out to see if there was any merit to this claim and if this would have any outcome on the election. 
+Early this year, British and Brazilian presidents saw increases in approval ratings after being diagnosed with Covid-19. Source https://www.pri.org/stories/2020-10-02/trump-positive-what-catching-covid-19-meant-boris-johnson-jair-bolsonaro. There were rumbling on the left that, after Trump announced he had contracted the virus following the first presidential debate, the US President was strategically manipulating American sentiment to avoid criticism from his bad debate performance. We set out to see if there was any merit to this claim and if this would have any outcome on the election.
 
 "Our results suggest that Twitter is becoming a more reliable platform to gather the true sentiment of a certain topic. Comparing sentiment of tweets to reliable polling data shows a correlation as high as 84% using a moving average smoothing technique.":
 https://medium.com/shiyan-boxer/2020-us-presidential-election-twitter-sentiment-analysis-and-visualization-89e58a652af5
@@ -8,13 +8,13 @@ https://medium.com/shiyan-boxer/2020-us-presidential-election-twitter-sentiment-
 ## The 2020 Presidential Election Twitter Dataset, September 30 2020 - October 2 2020
     link:
 
-The full dataset consists of 140,337 tweets & metadata from 121,040 unique users. Twitter data is infamously messy, however for the purposes of this study, the issue is not as dramatic. We obtained a JSONL file consisting of 32 keys with only several columns providing use. 
+The full dataset consists of 140,337 tweets & metadata from 121,040 unique users. Twitter data is infamously messy, however for the purposes of this study, the issue is not as dramatic. We obtained a JSONL file consisting of 32 keys with only several columns providing use.
 <p align="center">
 <img src="https://raw.githubusercontent.com/rcohngru/datathon/main/img/data_synopsis.png" width='300'>
 </p>
-Since we wanted to make this a distinctly American study, we had to be as confident as possible in our dataset's sources. Our full cleaning process can be read in the src/load_clean_data.py file. 
+Since we wanted to make this a distinctly American study, we had to be as confident as possible in our dataset's sources. Our full cleaning process can be read in the src/load_clean_data.py file.
 
-The `lang` column was the easiest to start with, of which 16,082 non-English tweets were dropped. 
+The `lang` column was the easiest to start with, of which 16,082 non-English tweets were dropped.
 
 The `source` column also showed potential problems. The bulk of the tweets came from The iPhone or Android Twitter apps, however many values looked like potential bots coming from 3rd party apps, so we dropped 1,456 tweets generated outside of the 5 most common sources officially integrated by Twitter.
 
@@ -33,7 +33,32 @@ Something that sparked our interest was how quickly the 'Twittershpere' latched 
 <p align="center">
 <img src="https://raw.githubusercontent.com/rcohngru/datathon/main/img/debatementionsperhour.png" width='600'><br><br>
 
+Additionally, during the time frame of these tweets, Donald Trump was diagnosed with COVID-19. As mentioned previously, when other world leaders contracted the virus they were met with boosted approval ratings. It appears that Trump's positive test resulted in a positive swing in sentiment for both Donald Trump and Joe Biden, but we were curious to see whether or not this change was significant.
+<p align="center">
+<img src="https://raw.githubusercontent.com/rcohngru/datathon/main/img/VADER.png" width='600'><br><br>
 
+## Hypothesis Testing
+We decided to conduct a series of hypothesis tests to determine the following:
+- Whether or not Donald Trump's positive COVID test resulted in increased positive sentiment for himself and Joe Biden
 
+### COVID-19 Positive Test
+We were curious to know if the positive increases in sentment towards both candidates following Donald Trump's positive COVID-19 could be attributed to that. We created two hypothesis tests to determine this. Instead of using the moment at which Donald Trump announced that he had COVID-19 via Twitter, we chose to use his tweet announcing that Hope Hicks had COVID from several hours before as the break point.
 
+Our reasoning behind this choice is that this is the point at which the possibility that Donald Trump had COVID-19 became real, given that he traveled with Hope Hicks daily in the days leading up to the test. It was after this point that the Twittersphere began to contend with this possibility, and we feel like the excitement we see in the graph surrounding the possibility of Donald Trump having COVID-19 matches the excitement we see in the graph following his confirmation.
+
+Our formal question is as follows:
+Did the news of Hope Hicks' and Donald Trump's positive tests increase positive sentiment for Donald Trump and Joe Biden on Twitter?
+
+![equation](https://latex.codecogs.com/gif.latex?H_0%3A%20%5Cmu_b%20%3D%20%5Cmu_a)
+
+![equation](https://latex.codecogs.com/gif.latex?H_a%3A%20%5Cmu_b%20%3C%20%5Cmu_a)
+
+Where `b` is before the Hope Hicks positive tweet and `a` is after. We ran identical experiments for four corpus's of tweets, with the followng criteria:
+- Corpus 1: Exclusively Biden focused
+- Corpus 2: Exclusively Trump focused
+- Corpus 3: Biden focused but may include Trump
+- Corpus 4: Trump focused but may include Biden
+
+[cursory sample size data, etc...]
+[Table of results goes here]
 
