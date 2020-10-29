@@ -10,6 +10,11 @@ import pickle
 plt.style.use('fivethirtyeight')
 
 def vader_analysis():
+    '''
+    Applies VADER sentiment analysis to a corpus of tweets.
+    
+    Returns two dataframes of political tweets split by candidate with VADER scores.
+    '''
     #load the data
     data = load_data('data/clean/twitter_data.pkl')
     
@@ -31,6 +36,23 @@ def vader_analysis():
     #Getting rid of these to better hone in on raw emotion
     biden_tweets = biden_tweets[~((biden_tweets['neu'] == 1) & (biden_tweets['com'] == 0))]
     trump_tweets = trump_tweets[~((trump_tweets['neu'] == 1) & (trump_tweets['com'] == 0))]
+    
+    return biden_tweets, trump_tweets
+    
+    
+def plot_VADER():  
+    '''
+        Plots the avg VADER sentiment.
+
+        Input:
+        -biden_avg: list of average vader sentiments corresponding to 3 hr intervals
+        -trump_avg: list of average vader sentiments corresponding to 3 hr intervals
+        -intervals: list of hour intervals (UTC)
+
+        Returns None
+    '''
+    
+    biden_tweets, trump_tweets = vader_analysis()
     
     #specify intervals
     intervals = pd.date_range(start='2020-09-30', end='2020-10-03', freq='1H', tz='UTC')
@@ -54,24 +76,6 @@ def vader_analysis():
         biden_avg.append(biden_set['com'].mean())
         trump_avg.append(trump_set['com'].mean())
 
-    plot_VADER(biden_avg, trump_avg, intervals)
-    
-    return biden_avg, trump_avg
-    
-    
-    
-def plot_VADER(biden_avg, trump_avg, intervals):  
-    '''
-        Plots the avg VADER sentiment.
-        
-        Input:
-        -biden_avg: list of average vader sentiments corresponding to 3 hr intervals
-        -trump_avg: list of average vader sentiments corresponding to 3 hr intervals
-        -intervals: list of hour intervals (UTC)
-        
-        Returns None
-    '''
-    
     
     #important tweet timestamps
     trump_tweet = datetime.datetime(2020, 10, 2, 4, 54)
@@ -177,4 +181,4 @@ def clean_tweets(tweets):
     return tweets
 
 if __name__ == "__main__":
-    vader_analysis()
+    plot_VADER()
