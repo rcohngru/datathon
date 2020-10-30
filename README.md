@@ -183,7 +183,7 @@ Ho = The news of Hope Hicks' and Donald Trump's positive tests did not result in
 Ha = The news of Hope Hicks' and Donald Trump's positive tests did result in a positive change in sentiment for Donald Trump and Joe Biden on Twitter
 
 **Ultimately, we rejected our null hypothesis.**
-Upon examining the data more closely following our experiment, we became less confident in our results. We believe that the positive spike for both candidates that occurs following the Hope Hicks tweet can be attributed to a decline in negative sentiment as opposed to an increase in positive sentiment--a key difference. 
+Upon examining the data more closely following our experiment, we became less confident in our results. While there is an obvious positive spike for both candidates following the Hope Hicks tweet, we believe that this is not the result of increased support. Negative tweets were still occurring, they were just overshadowed by the existing supporters of each candidate becoming more vocal. Furthermore, some users expressed excitement that Donald Trump had COVID, which the VADER model would have interpreted as positive support.
 
-Additionally, within hours of the events, negative sentiment tweets began occurring again for both candidates and their average overall sentiments began to drop once again.
+Additionally, within hours of the events, the average sentiment lowered to similar levels prior to the COVID-19 debacle.
 
