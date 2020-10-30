@@ -2,7 +2,13 @@
 ## Sentiment Analysis of Twitter Data
 Early this year, British and Brazilian presidents saw [increases in approval ratings  ratings after being diagnosed with Covid-19](https://www.pri.org/stories/2020-10-02/trump-positive-what-catching-covid-19-meant-boris-johnson-jair-bolsonaro). After US President Donald Trump announced he had contracted the virus following the first presidential debate, there were rumblings on the left that Trump was strategically manipulating American sentiment to avoid criticism from his bad debate performance. We set out to see if there was any merit to this claim and if this would have any outcome on the election.
 
-The results of [this Medium article](https://medium.com/shiyan-boxer/2020-us-presidential-election-twitter-sentiment-analysis-and-visualization-89e58a652af5) suggest that "Twitter is becoming a more reliable platform to gather the true sentiment of a certain topic. Comparing sentiment of tweets to reliable polling data shows a correlation as high as 84% using a moving average smoothing technique.
+The results of [this Medium article](https://medium.com/shiyan-boxer/2020-us-presidential-election-twitter-sentiment-analysis-and-visualization-89e58a652af5) suggest that "Twitter is becoming a more reliable platform to gather the true sentiment of a certain topic. Comparing sentiment of tweets to reliable polling data shows a correlation as high as 84% using a moving average smoothing technique", so we definintely think tracking Twitter sentiment is an accurate gague of how the electorate is feeling.
+
+## Business Question:
+
+**"Did President Trump's positive COVID-19 test result in increased positive sentiment for himself and Joe Biden?"**
+
+
 
 
 ## The 2020 Presidential Election Twitter Dataset, September 30 2020 - October 2 2020
@@ -29,7 +35,7 @@ There is a strong presidential race theme in this dataset, with over half the tw
 <p align="center">
 <img src="https://raw.githubusercontent.com/rcohngru/datathon/main/img/candidateengagement.png" width='600'><br><br>
 
-Something that sparked our interest was how quickly the 'Twittershpere' latched onto and then moved on from mentioning 'debate'. The early morning of the 30th (essentially late evening of the 29th) had around 300 tweets per hour mentioning the debate and stayed above 100 per hour the entire day, before dropping to 50 per and then close to 0 on the following. <br><br>
+Something that sparked our interest was how quickly the 'Twittershpere' latched onto and then moved on from mentioning 'debate'. The early morning of the 30th (essentially late evening of the 29th) had around 300 tweets per hour mentioning the debate and stayed above 100 per hour the entire day, before dropping to 50 per and then close to 0 on the following. When President Trump tested positive for COVID-19 and Biden negative tested soon after, those topics took over the 'Twittershpere' <br><br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/rcohngru/datathon/main/img/debatementionsperhour.png" width='600'><br><br>
 
@@ -38,7 +44,7 @@ We wanted to assign a 'sentiment value' to each tweet in our dataset so we used 
 <p align="center">
 <img src="https://raw.githubusercontent.com/rcohngru/datathon/main/img/trendline538.png" width='600'><br><br>
 
-Additionally, during the time frame of these tweets, Donald Trump was diagnosed with COVID-19. As mentioned previously, when other world leaders contracted the virus they were met with boosted approval ratings. It appears that Trump's positive test resulted in a positive swing in sentiment for both Donald Trump and Joe Biden, but we were curious to see whether or not this change was significant.
+It appears that Trump's positive test resulted in a positive swing in sentiment for both Donald Trump and Joe Biden, but we were curious to see whether or not this change was significant.
 <p align="center">
 <img src="https://raw.githubusercontent.com/rcohngru/datathon/main/img/VADER.png" width='600'><br><br>
     
