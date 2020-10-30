@@ -2,7 +2,7 @@
 ## Sentiment Analysis of Twitter Data
 Early this year, British and Brazilian presidents saw [increases in approval ratings  ratings after being diagnosed with Covid-19](https://www.pri.org/stories/2020-10-02/trump-positive-what-catching-covid-19-meant-boris-johnson-jair-bolsonaro). After US President Donald Trump announced he had contracted the virus following the first presidential debate, there were rumblings on the left that Trump was strategically manipulating American sentiment to avoid criticism from his bad debate performance. We set out to see if there was any merit to this claim and if this would have any outcome on the election.
 
-The results of [this Medium article](https://medium.com/shiyan-boxer/2020-us-presidential-election-twitter-sentiment-analysis-and-visualization-89e58a652af5) suggest that "Twitter is becoming a more reliable platform to gather the true sentiment of a certain topic. Comparing sentiment of tweets to reliable polling data shows a correlation as high as 84% using a moving average smoothing technique", so we definintely think tracking Twitter sentiment is an accurate gague of how the electorate is feeling.
+The results of [this Medium article](https://medium.com/shiyan-boxer/2020-us-presidential-election-twitter-sentiment-analysis-and-visualization-89e58a652af5) suggest that "Twitter is becoming a more reliable platform to gather the true sentiment of a certain topic. Comparing sentiment of tweets to reliable polling data shows a correlation as high as 84% using a moving average smoothing technique", so we think tracking Twitter sentiment is an accurate gague of how the electorate is feeling.
 
 ## Business Question:
 
@@ -12,7 +12,31 @@ The results of [this Medium article](https://medium.com/shiyan-boxer/2020-us-pre
 
 
 ## The 2020 Presidential Election Twitter Dataset, September 30 2020 - October 2 2020
-    link:
+### How to get this data:
+
+Data Source: [GitHub Repo link provided @12PM Friday 10/29/2020](https://drive.google.com/file/d/1rBJBWWTF9lvKs4pY-PF9Wad91yiW45ol/view?usp=sharing)
+
+1. Clone [GitHub Repo link provided @12PM Friday 10/29/2020](https://drive.google.com/file/d/1rBJBWWTF9lvKs4pY-PF9Wad91yiW45ol/view?usp=sharing)
+
+2. Follow the instructions in the repository to install `twarc` and `tqdm`.
+
+3. Apply for a twitter developer account.
+
+4. Save api key, save api secret key, save bearer token.
+
+5. Enter your twitter api information into twarc.
+
+6. Use a `mv` command to move the contents of the desired days into a new single directory.
+
+7. Look inside the cloned repository for the appropriate .txt files containing tweet ids. (ex. `cat * >> file name.txt`)
+
+8. Concatenate those files into one file.
+
+9. In the terminal, use `awk 'NR % 100 == 0' <file.txt> > <result.txt>` to systematically sample every 100th tweet id. These are the tweets you will hydrate.
+
+10. Modify the `hydrate.py` script in the cloned repository and run the script to rehydrate tweets from your file of tweet ids.
+
+11. Analyze tweets.
 
 The full dataset consists of 140,337 tweets & metadata from 121,040 unique users. Twitter data is infamously messy, however for the purposes of this study, the issue is not as dramatic. We obtained a JSONL file consisting of 32 keys with only several columns providing use.
 <p align="center">
@@ -153,35 +177,12 @@ To better understand the context of American sentiment around this 3-day window,
 
 To recap, our null and alternate hypotheses were as follows:
 
-Ho = The news of Hope Hicks' and Donald Trump's positive tests did not change positive sentiment for Donald Trump and Joe Biden on Twitter
+Ho = The news of Hope Hicks' and Donald Trump's positive tests did not result in a positive change in sentiment for Donald Trump and Joe Biden on Twitter
 
-Ha = The news of Hope Hicks' and Donald Trump's positive tests did change positive sentiment for Donald Trump and Joe Biden on Twitter
+Ha = The news of Hope Hicks' and Donald Trump's positive tests did result in a positive change in sentiment for Donald Trump and Joe Biden on Twitter
 
-**In the end, we rejected our null hypothesis.**
-The Twitter sentiment for Donald Trump and Joe Biden had a statistically significant difference before and after Presiden Trump tweeted he had the virus.
+**Ultimately, we rejected our null hypothesis.**
+Upon examining the data more closely following our experiment, we became less confident in our results. We believe that the positive spike for both candidates that occurs following the Hope Hicks tweet can be attributed to a decline in negative sentiment as opposed to an increase in positive sentiment--a key difference. 
 
-## Experiment Replication
+Additionally, within hours of the events, negative sentiment tweets began occurring again for both candidates and their average overall sentiments began to drop once again.
 
-Data Source: [GitHub Repo link provided @12PM Friday 10/29/2020](https://drive.google.com/file/d/1rBJBWWTF9lvKs4pY-PF9Wad91yiW45ol/view?usp=sharing)
-
-1. Clone [GitHub Repo link provided @12PM Friday 10/29/2020](https://drive.google.com/file/d/1rBJBWWTF9lvKs4pY-PF9Wad91yiW45ol/view?usp=sharing)
-
-2. Follow the instructions in the repository to install twarc and tqdm.
-
-3. Apply for a twitter developer account.
-
-4. Save api key, save api secret key, save bearer token.
-
-5. Enter your twitter api information into twarc.
-
-6. Use a mv command to move the contents of the desired days into a new single directory.
-
-7. Look inside the cloned repository for the appropriate .txt files containing tweet ids. (ex. cat * >> file name.txt)
-
-8. Concatenate those files into one file.
-
-9. In the terminal, use awk 'NR % 100 == 0' <file.txt> > <result.txt> to systematically sample every 100th tweet id. These are the tweets you will hydrate.
-
-10. Modify the hydrate.py script in the cloned repository and run the script to rehydrate tweets from your file of tweet ids.
-
-11. Analyze tweets.
