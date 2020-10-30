@@ -97,6 +97,14 @@ Results:
 
 ## Contextualizing Sentiment with WordClouds
 
+To better understand the context of American sentiment around this 3-day window, we mapped the sentiment scores onto the dataset and grouped tweets above and below the 0.0 compound threshold, before and after Trump's Covid diagnosis announcement for each candidate. Some interesting points to note:
+- Positive sentiment towards both candidates is coupled with negative sentiment towards the other.
+- The overlapping vocabulary between positive/negative sentiment might suggest the model does a good job of identifying language nuances, however more investigation is needed.
+- The anti-Trump camp seems to relish Trump's diagnosis.
+- Negative Biden tweets are muddied due to folks discussing his negative diagnosis, meaning true sentiment towards Biden may have been a bit higher.
+
+
+
 ### Tweets about Trump with Positive Sentiment
 
 <details>
@@ -141,3 +149,4 @@ Results:
     </tr>
 </table></details>
 
+## Conclusion
