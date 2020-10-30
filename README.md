@@ -1,12 +1,12 @@
-# Datathon: WEST COAST III
-## Sentiment Analysis of Twitter Data
-Early this year, British and Brazilian presidents saw [increases in approval ratings  ratings after being diagnosed with Covid-19](https://www.pri.org/stories/2020-10-02/trump-positive-what-catching-covid-19-meant-boris-johnson-jair-bolsonaro). After US President Donald Trump announced he had contracted the virus following the first presidential debate, there were rumblings on the left that Trump was strategically manipulating American sentiment to avoid criticism from his bad debate performance. We set out to see if there was any merit to this claim and if this would have any outcome on the election.
+# Martyr Politics
+## Twitter Sentiment Analysis around Trump's Covid Diagnosis
+Early this year, British and Brazilian presidents saw momentary [increases in approval ratings  ratings after being diagnosed with Covid-19](https://www.pri.org/stories/2020-10-02/trump-positive-what-catching-covid-19-meant-boris-johnson-jair-bolsonaro). After US President Donald Trump announced he had contracted the virus following the first presidential debate, there were rumblings on the left that Trump was strategically manipulating American sentiment to avoid criticism from his bad debate performance. We set out to see if there was any merit to this claim and if it might have any outcome on the election.
 
 The results of [this Medium article](https://medium.com/shiyan-boxer/2020-us-presidential-election-twitter-sentiment-analysis-and-visualization-89e58a652af5) suggest that "Twitter is becoming a more reliable platform to gather the true sentiment of a certain topic. Comparing sentiment of tweets to reliable polling data shows a correlation as high as 84% using a moving average smoothing technique", so we think tracking Twitter sentiment is an accurate gague of how the electorate is feeling.
 
 ## Business Question:
 
-**"Did President Trump's positive COVID-19 test result in increased positive sentiment for himself and Joe Biden?"**
+**"Did President Trump's positive COVID-19 test result in increased positive sentiment for himself and/or Joe Biden?"**
 
 
 
@@ -37,8 +37,9 @@ Data Source: [GitHub Repo link provided @12PM Friday 10/29/2020](https://drive.g
 10. Modify the `hydrate.py` script in the cloned repository and run the script to rehydrate tweets from your file of tweet ids.
 
 11. Analyze tweets.
-
-The full dataset consists of 140,337 tweets & metadata from 121,040 unique users. Twitter data is infamously messy, however for the purposes of this study, the issue is not as dramatic. We obtained a JSONL file consisting of 32 keys with only several columns providing use.
+    
+### Overview
+The full dataset we obtained consists of 140,337 tweets & metadata from 121,040 unique users. Twitter data is infamously messy, however for the purposes of this study, the issue is not as dramatic. We obtained a JSONL file consisting of 32 keys with only several columns providing use.
 <p align="center">
 <img src="https://raw.githubusercontent.com/rcohngru/datathon/main/img/data_synopsis.png" width='300'>
 </p>
@@ -55,7 +56,7 @@ Our final dataset consists of 66,337 tweets, evenly distributed across each of t
 <img src="https://raw.githubusercontent.com/rcohngru/datathon/main/img/tweetsperday.png" width='600'><br><br>
 
 ## Initial Observations
-There is a strong presidential race theme in this dataset, with over half the tweets directly mentioning Trump while ~1/3rd mention Biden. This did not surprise us as Trump is more active on Twitter.<br><br>
+There is a strong presidential race theme in this dataset, with over half the tweets directly mentioning Trump while ~1/3 mention Biden. This did not surprise us as Trump is more active on Twitter.<br><br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/rcohngru/datathon/main/img/candidateengagement.png" width='600'><br><br>
 
@@ -175,7 +176,7 @@ To better understand the context of American sentiment around this 3-day window,
 
 ## Conclusion
 
-To recap, our null and alternate hypotheses were as follows:
+Our null and alternate hypotheses were as follows:
 
 Ho = The news of Hope Hicks' and Donald Trump's positive tests did not result in a positive change in sentiment for Donald Trump and Joe Biden on Twitter
 
