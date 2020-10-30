@@ -150,3 +150,38 @@ To better understand the context of American sentiment around this 3-day window,
 </table></details>
 
 ## Conclusion
+
+To recap, our null and alternate hypotheses were as follows:
+
+Ho = The news of Hope Hicks' and Donald Trump's positive tests did not change positive sentiment for Donald Trump and Joe Biden on Twitter
+
+Ha = The news of Hope Hicks' and Donald Trump's positive tests did change positive sentiment for Donald Trump and Joe Biden on Twitter
+
+**In the end, we rejected our null hypothesis.**
+The Twitter sentiment for Donald Trump and Joe Biden had a statistically significant difference before and after Presiden Trump tweeted he had the virus.
+
+## Experiment Replication
+
+Data Source: [GitHub Repo link provided @12PM Friday 10/29/2020](https://drive.google.com/file/d/1rBJBWWTF9lvKs4pY-PF9Wad91yiW45ol/view?usp=sharing)
+
+1. Clone [GitHub Repo link provided @12PM Friday 10/29/2020](https://drive.google.com/file/d/1rBJBWWTF9lvKs4pY-PF9Wad91yiW45ol/view?usp=sharing)
+
+2. Follow the instructions in the repository to install twarc and tqdm.
+
+3. Apply for a twitter developer account.
+
+4. Save api key, save api secret key, save bearer token.
+
+5. Enter your twitter api information into twarc.
+
+6. Use a mv command to move the contents of the desired days into a new single directory.
+
+7. Look inside the cloned repository for the appropriate .txt files containing tweet ids. (ex. cat * >> file name.txt)
+
+8. Concatenate those files into one file.
+
+9. In the terminal, use awk 'NR % 100 == 0' <file.txt> > <result.txt> to systematically sample every 100th tweet id. These are the tweets you will hydrate.
+
+10. Modify the hydrate.py script in the cloned repository and run the script to rehydrate tweets from your file of tweet ids.
+
+11. Analyze tweets.
