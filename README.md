@@ -67,3 +67,45 @@ Where `b` is before the Hope Hicks positive tweet and `a` is after. We ran ident
 [cursory sample size data, etc...]
 [Table of results goes here]
 
+## Contextualizing Sentiment with WordClouds
+
+### Tweets about Trump with Positive Sentiment
+<details><summary>
+
+<table>
+    <tr>
+        <td>PRE-COVID<img src='https://raw.githubusercontent.com/rcohngru/datathon/main/img/wordclouds/protrump_precovid.png' width='400'></td>
+        <td>POST-COVID<img src='https://raw.githubusercontent.com/rcohngru/datathon/main/img/wordclouds/protrump_postcovid.png' width='400'></td>
+    </tr>
+</table></summary></details>
+
+### Tweets about Trump with Negative Sentiment
+<details><summary>
+
+<table>
+    <tr>
+        <td>PRE-COVID<img src='https://raw.githubusercontent.com/rcohngru/datathon/main/img/wordclouds/negtrump_precovid.png' width='400'></td>
+        <td>POST-COVID<img src='https://raw.githubusercontent.com/rcohngru/datathon/main/img/wordclouds/negtrump_postcovid.png' width='400'></td>
+    </tr>
+</table></summary></details>
+
+### Tweets about Biden with Postitive Sentiment
+<details><summary>
+
+<table>
+    <tr>
+        <td>PRE-COVID<img src='https://raw.githubusercontent.com/rcohngru/datathon/main/img/wordclouds/probiden_precovid.png' width='400'></td>
+        <td>POST-COVID<img src='https://raw.githubusercontent.com/rcohngru/datathon/main/img/wordclouds/probiden_postcovid.png' width='400'></td>
+    </tr>
+</table></summary></details>
+
+### Tweets about Biden with Negative Sentiment
+<details><summary>
+
+<table>
+    <tr>
+        <td>PRE-COVID<img src='https://raw.githubusercontent.com/rcohngru/datathon/main/img/wordclouds/negbiden_precovid.png' width='400'></td>
+        <td>POST-COVID<img src='https://raw.githubusercontent.com/rcohngru/datathon/main/img/wordclouds/negbiden_postcovid.png' width='400'></td>
+    </tr>
+</table></summary></details>
+
