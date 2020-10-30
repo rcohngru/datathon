@@ -71,8 +71,29 @@ Where `b` is before the Hope Hicks positive tweet and `a` is after. We ran ident
 - Corpus 3: Biden focused but may include Trump
 - Corpus 4: Trump focused but may include Biden
 
-[cursory sample size data, etc...]
-[Table of results goes here]
+Sample Sizes:
+|  Grouping  | Before Size | After Size |
+|------------|-------------|------------|
+| Only Biden |     6911    |     1821   |
+| Only Trump |    15227    |     9691   |
+|   Biden    |    11226    |     2799   |
+|   Trump    |    19542    |    10669   |
+
+Sentiment Swings:
+| Candidate  | Before Sentiment (avg) | After Sentiment (avg) |
+|------------|------------------------|-----------------------|
+| Only Biden |         -0.02          |          0.11         |
+| Only Trump |         -0.03          |          0.16         |
+|   Biden    |         -0.07          |          0.07         |
+|   Trump    |         -0.05          |          0.15         |
+
+Results:
+|  Grouping  | p-value |
+|------------|---------|
+| Only Biden |   0.00  |
+| Only Trump |   0.00  |
+|    Biden   |   0.00  |
+|    Trump   |   0.00  |
 
 ## Contextualizing Sentiment with WordClouds
 
