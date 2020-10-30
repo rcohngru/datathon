@@ -36,6 +36,11 @@ Something that sparked our interest was how quickly the 'Twittershpere' latched 
 Additionally, during the time frame of these tweets, Donald Trump was diagnosed with COVID-19. As mentioned previously, when other world leaders contracted the virus they were met with boosted approval ratings. It appears that Trump's positive test resulted in a positive swing in sentiment for both Donald Trump and Joe Biden, but we were curious to see whether or not this change was significant.
 <p align="center">
 <img src="https://raw.githubusercontent.com/rcohngru/datathon/main/img/VADER.png" width='600'><br><br>
+    
+We wanted to assign a 'sentiment value' to each tweet in our dataset so we used the [VADER sentiment library](https://github.com/cjhutto/vaderSentiment). This library reads in text and assigns it four scores: positivity, negativity, neutral, and compound, a measure of positive or negative excitement. To track sentiment over the three days of tweets in our dataset, we plotted every non zero compound score and created two trendlines: one for before President Trump tweeted about his positive COVID-19 test, and one for after. Below is the graph highlighting the change.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/rcohngru/datathon/main/img/trendline.png" width='600'><br><br>
 
 ## Hypothesis Testing
 We decided to conduct a series of hypothesis tests to determine the following:
